@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class HandEngine {
 
-	private static final Logger _log = LoggerFactory.getLogger(HandEngine.class);
+	private static final Logger log = LoggerFactory.getLogger(HandEngine.class);
 
 	/**
 	 * Possible types of hands in a texas holdem game.
@@ -6215,7 +6215,7 @@ public class HandEngine {
         int cards = 0;
         int card = 0;
 
-        if(_log.isTraceEnabled()) _log.trace("hand: " + aHand);
+        if(log.isTraceEnabled()) log.trace("hand: " + aHand);
 
         try {
         	IntegerRef index = new IntegerRef(0);
@@ -6223,7 +6223,7 @@ public class HandEngine {
             	card >= 0;
             	card = nextCard(aHand, index)) {
 
-            	if(_log.isTraceEnabled()) _log.trace("index: " + index);
+            	if(log.isTraceEnabled()) log.trace("index: " + index);
 
             	if ((handmask & (1L << card)) != 0)
                     return false;
@@ -6234,7 +6234,7 @@ public class HandEngine {
             return card == -1 && cards > 0 && index.get() >= aHand.length();
         }
         catch(Exception e) {
-        	_log.error(e.getMessage());
+        	log.error(e.getMessage());
         }
 
         return false;
@@ -6366,7 +6366,7 @@ public class HandEngine {
 		if(aCardIterator == null)
 			throw new IllegalArgumentException("itrator");
 
-		if(_log.isTraceEnabled()) _log.trace("index: " + aCardIterator);
+		if(log.isTraceEnabled()) log.trace("index: " + aCardIterator);
 
         // Remove whitespace
 		while (aCardIterator.get() < aCards.length() &&
@@ -6380,7 +6380,7 @@ public class HandEngine {
         // Parse cards
         if(aCardIterator.get() < aCards.length()) {
         	char charAt = aCards.charAt(aCardIterator.increment());
-        	if(_log.isTraceEnabled()) _log.trace("switch val: " + charAt);
+        	if(log.isTraceEnabled()) log.trace("switch val: " + charAt);
         	switch(charAt) {
                 case '1':
                     try {
@@ -6444,7 +6444,7 @@ public class HandEngine {
         }
         else { return -2; }
 
-        if(_log.isTraceEnabled()) _log.trace("rank: " + rank);
+        if(log.isTraceEnabled()) log.trace("rank: " + rank);
 
         if(aCardIterator.get() < aCards.length()) {
             switch (aCards.charAt(aCardIterator.increment())) {
@@ -6470,7 +6470,7 @@ public class HandEngine {
         }
         else { return -2; }
 
-        if(_log.isTraceEnabled()) _log.trace("suit: " + suit);
+        if(log.isTraceEnabled()) log.trace("suit: " + suit);
 
         return rank + (suit * 13);
 	}
@@ -6571,7 +6571,7 @@ public class HandEngine {
                 return b.toString();
         }
 
-        _log.error("could not determine hand description from [" +
+        log.error("could not determine hand description from [" +
         		handValue + "]");
 
         return "";
@@ -6590,8 +6590,8 @@ public class HandEngine {
 
 		int numberOfCards = BitCount(aCardMask);
 
-		if(_log.isDebugEnabled())
-			_log.debug("mask: " + aCardMask);
+		if(log.isDebugEnabled())
+			log.debug("mask: " + aCardMask);
 
         // This functions supports 1-7 cards
         if (numberOfCards < 1 || numberOfCards > 7)
@@ -6604,7 +6604,7 @@ public class HandEngine {
         int ss = (int)((aCardMask >> (SPADE_OFFSET)) & 0x1fffL);
 
         int handvalue = Evaluate(aCardMask, numberOfCards);
-        if(_log.isDebugEnabled()) _log.debug("handvalue: " + handvalue);
+        if(log.isDebugEnabled()) log.debug("handvalue: " + handvalue);
 
         switch(HandTypes.values()[computeHandType(handvalue)])
         {
@@ -6654,7 +6654,7 @@ public class HandEngine {
                 break;
         }
 
-        _log.error("could not produce " +
+        log.error("could not produce " +
         		"description given mask [" + aCardMask + "]");
 
         return "";
@@ -7796,8 +7796,8 @@ public class HandEngine {
 		double hs = (wins + (ties * 0.5D)) / count;
 		if(aPlayerCount > 2) hs = Math.pow(hs, aPlayerCount);
 
-		if(_log.isTraceEnabled())
-			_log.trace("hs: " + hs + " hands evaluated: " + count);
+		if(log.isTraceEnabled())
+			log.trace("hs: " + hs + " hands evaluated: " + count);
 
 		return hs;
 	}

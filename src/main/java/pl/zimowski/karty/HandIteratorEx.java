@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  */
 public class HandIteratorEx implements Iterator<Long> {
 
-	private static final Logger _log = LoggerFactory.getLogger(HandIteratorEx.class);
+	private static final Logger log = LoggerFactory.getLogger(HandIteratorEx.class);
 
     int _i1, _i2, _i3, _i4, _i5, _i6, _i7, length;
     long _card1, _card2, _card3, _card4, _card5, _card6, _card7;
@@ -37,7 +37,7 @@ public class HandIteratorEx implements Iterator<Long> {
 		int n = HandEngine.NUMBER_OF_CARDS - (sharedBits + deadBits);
 		int k = aNumOfCards - sharedBits;
 		_binomial = PokerMath.binomial(n, k);
-		if(_log.isTraceEnabled()) _log.trace("binomial: " + n + " choose " + k);
+		if(log.isTraceEnabled()) log.trace("binomial: " + n + " choose " + k);
 	}
 
 	@Override

@@ -2,7 +2,10 @@
 ---------------------
 A library capable of analyzing and evaluating poker hand strengts. 
 Can be used to build digital poker rooms, bots, and simulated poker 
-tournaments
+tournaments.
+```
+mvn clean test
+```
 
 # Origins
 ---------------------
@@ -19,8 +22,12 @@ to it after all these years and expand it.
 
 # Dislaimer
 ---------------------
-In its current form, the code kind of sucks (although if I remember 
-correctly it does generate correct outputs). I don't write code like 
-this anymore, it's a code written by me way back when Maven was just 
-in incubator stage, and GIT was barely released. Nonetheless, a good 
-look into my past :-)
+In its current form, the code is not what typical Java project looks like. Mind you, 
+most of it had been ported from original C# version and the design fundamentals 
+remained the same; that is, hand iterations, rather than being computed on the fly 
+are pre-defined in static tables up front (in the form of large arrays) and evaluated 
+off those structures which greatly improves performance. If I remember correctly the 
+algorithms do generate correct outputs.
+
+In any case, for me this one is full of nostalic memories and an interesting peek  
+into my past :-)

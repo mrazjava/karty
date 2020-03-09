@@ -29,5 +29,5 @@ are pre-defined in static tables up front (in the form of large arrays) and eval
 off those structures which greatly improves performance. If I remember correctly the 
 algorithms do generate correct outputs.
 
-In any case, for me this one is full of nostalic memories and an interesting peek  
+In any case, for me this one is full of nostalic memories and an interesting peek 
 into my past :-)

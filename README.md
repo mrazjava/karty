@@ -9,7 +9,7 @@ mvn clean test
 
 # Origins
 ---------------------
-Many, many years ago (around 2005/06 ?) I was ill for an extended 
+Many, many summers ago (around 2005/06 ?) I was ill for an extended 
 period of time, bound to bed, with not much to do. It was during 
 that time that I found a simple implementation of a poker engine 
 in C#, which inspired me to play around with the concept of poker AI 

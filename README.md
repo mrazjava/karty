@@ -9,12 +9,10 @@ mvn clean test
 
 # Origins
 ---------------------
-Many, many summers ago (around 2005/06 ?) I was ill for an extended 
-period of time, bound to bed, with not much to do. It was during 
-that time that I found a simple implementation of a poker engine 
-in C#, which inspired me to play around with the concept of poker AI 
-in Java. So I ported some of that C# code (unfortunately did not save the source URL), 
-and improved it to make it somewhat usable. After recovering, I totally forgot about 
+Many, many summers ago (around 2005/06 ?) I was quite a bit into playing poker. One day I 
+stumbled upon a great read: [implementation of a poker engine](https://www.codeproject.com/Articles/12279/Fast-Texas-Holdem-Hand-Evaluation-and-Analysis). 
+This was written in C#, so I started playing around with it, and before I knew it, 
+I was porting it to Java. After a while I totally forgot about 
 this project. Several years later I found it on one of my dusty hard drives, and out 
 of the pure nostalgia for the memories of that ill period of time, decided to revive 
 it. I Mavenized it, cleaned up few issues and uploaded to github. Maybe will get back 

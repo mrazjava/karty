@@ -29,3 +29,9 @@ algorithms do generate correct outputs.
 
 In any case, for me this one is full of nostalic memories and an interesting peek 
 into my past :-)
+
+# Related
+
+Here are other similar but unrelated projects:
+
+- [Poker-Hand-Evaluator](https://github.com/danielpaz6/Poker-Hand-Evaluator)
